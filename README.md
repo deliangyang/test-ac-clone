@@ -41,7 +41,7 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 example/main.go
 ```
 
-### Party API注释约束
+### Happy API注释约束
 
 ```php
 // @module
