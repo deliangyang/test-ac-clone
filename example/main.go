@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	docgen "github.com/deliangyang/api-docgen"
+	docgen "github.com/deliangyang/chi-api-doc"
 	"github.com/go-chi/chi"
 )
 

@@ -1,4 +1,4 @@
-module github.com/deliangyang/api-docgen
+module github.com/deliangyang/chi-api-doc
 
 go 1.12
 
