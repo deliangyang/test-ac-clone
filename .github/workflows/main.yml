@@ -28,7 +28,7 @@ jobs:
         with:
               # Repository owner and name. Ex: sudosubin/git-clone-action
               # Default: ${{ github.repository }}
-              repository: 'git@github.com:sudosubin/git-clone-action.git'
+              repository: 'github.com/sudosubin/git-clone-action'
 
               # Git host platform. Ex: github, gitlab, bitbucket, gitee, or else (git.suckless.org, ...)
               # Default: 'github'
