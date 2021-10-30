@@ -32,14 +32,14 @@ jobs:
 
               # Git host platform. Ex: github, gitlab, bitbucket, gitee, or else (git.suckless.org, ...)
               # Default: 'github'
-              platform: ''
+              platform: 'github'
 
               # Git branch, tag, or specific commit SHA to checkout.
               # Default: (auto default branch)
-              ref: ''
+              ref: 'test'
 
               # Relative path from current directory, where to clone.
-              path: ''
+              path: '/'
 
               # Todos below
               # fetch-depth
