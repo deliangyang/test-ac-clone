@@ -40,4 +40,4 @@ jobs:
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git config --global user.name 'sntfly'
           git config --global user.email 'yang623601391@gmail.com'
-          git push --set-upstream origin gh-pages -f
+          git push --set-upstream origin test-push -f
