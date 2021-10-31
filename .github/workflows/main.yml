@@ -34,7 +34,8 @@ jobs:
           git clone https://github.com/deliangyang/chi-api-doc.git
       - name: push repos
         run: |
-          cd data
+          ls -la
+          cd data/chi-api-doc
           git checkout -b master
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git config --global user.name 'sntfly'
