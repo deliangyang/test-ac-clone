@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,23 +24,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: sudosubin/git-clone-action@v1.0.1
-        with:
-              # Repository owner and name. Ex: sudosubin/git-clone-action
-              # Default: ${{ github.repository }}
-              repository: 'github.com/sudosubin/git-clone-action'
-
-              # Git host platform. Ex: github, gitlab, bitbucket, gitee, or else (git.suckless.org, ...)
-              # Default: 'github'
-              platform: 'github'
-
-              # Git branch, tag, or specific commit SHA to checkout.
-              # Default: (auto default branch)
-              ref: 'test'
-
-              # Relative path from current directory, where to clone.
-              path: '/'
-
-              # Todos below
-              # fetch-depth
-              # submodules
+      - name: change dir
+        run: |
+          mkdir -p /data
+      - name: git pull
+        run: |
+          cd /data
+          git clone https://github.com/deliangyang/chi-api-doc.git
+      - name: push repos
+        run: |
+          cd /data
+          git checkout -b master
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git config --global user.name 'sntfly'
+          git config --global user.email 'yang623601391@gmail.com'
+          git push --set-upstream origin gh-pages -f
