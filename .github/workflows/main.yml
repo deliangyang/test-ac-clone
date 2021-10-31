@@ -31,7 +31,7 @@ jobs:
       - name: git pull
         run: |
           cd data
-          git clone https://github.com/deliangyang/chi-api-doc.git
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/deliangyang/chi-api-doc.git
       - name: push repos
         run: |
           ls -la
