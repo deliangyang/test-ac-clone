@@ -9,6 +9,7 @@ on:
     branches: [ main ]
   schedule:
     # 定时任务 每20分钟执行一次
+    # https://docs.github.com/cn/actions/learn-github-actions/events-that-trigger-workflows 
     - cron: '20 * * * *'
   pull_request:
     branches: [ main ]
