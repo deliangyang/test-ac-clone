@@ -29,12 +29,15 @@ jobs:
           rm -rf .git
           mkdir -p data
       - name: git pull
+        # https://github.com/deliangyang/test-ac-clone/settings/secrets/actions
+        # 在/settings/secrets/actions 添加github action的变量
+        # GITHUB_TOKEN 换个名字 ORIGIN_GITHUB_TOKEN 添加他的token
+        # token 添加 settings > developer settings > personal access tokens > generate new token
         run: |
           cd data
           git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/deliangyang/chi-api-doc.git
       - name: push repos
         run: |
-          ls -la
           cd data/chi-api-doc
           git checkout -b test-push
           git remote add x-origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
