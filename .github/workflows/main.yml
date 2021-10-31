@@ -8,7 +8,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,14 +26,15 @@ jobs:
       - uses: actions/checkout@v2
       - name: change dir
         run: |
-          mkdir -p /data
+          rm -rf .git
+          mkdir -p data
       - name: git pull
         run: |
-          cd /data
+          cd data
           git clone https://github.com/deliangyang/chi-api-doc.git
       - name: push repos
         run: |
-          cd /data
+          cd data
           git checkout -b master
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git config --global user.name 'sntfly'
