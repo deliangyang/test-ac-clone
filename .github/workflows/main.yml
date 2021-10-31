@@ -36,7 +36,7 @@ jobs:
         run: |
           ls -la
           cd data/chi-api-doc
-          git checkout -b master
+          git checkout -b test-push
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git config --global user.name 'sntfly'
           git config --global user.email 'yang623601391@gmail.com'
